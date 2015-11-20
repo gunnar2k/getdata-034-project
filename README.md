@@ -5,7 +5,9 @@
 
 You will now have a freshly updated output_step4.txt and output_step5.txt
 
-# Process description
+# Data preperation process
+
+This section refers to the actual process used in run_analysis.R to obtain the desired result:
 
 1. Merged the two datasets (X_train.txt and X_test.txt) located in their respective dataset/ directory into a new data frame X_merged
 2. Set the column names of the new X_merged data frame using the existing dataset feature file (dataset/features.txt) with their appropriate names.
