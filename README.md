@@ -1,9 +1,8 @@
-# Running and testing
+# Getting started
 
-* `git clone https://github.com/gunnar2k/getdata-034-project.git`
-* In R: `source("run_analysis.R")`
-
-You will now have a freshly updated output_step4.txt and output_step5.txt
+* First clone the project: `git clone https://github.com/gunnar2k/getdata-034-project.git`
+* Then in R, run the main script: `source("run_analysis.R")`
+* This will generate the output_step4.txt and output_step5.txt files
 
 # Data preperation process
 
