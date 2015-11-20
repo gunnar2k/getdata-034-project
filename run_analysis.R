@@ -27,7 +27,7 @@ subject_test <- fread('dataset/test/subject_test.txt')
 subject_merged <- rbind(subject_train, subject_test)
 X_merged <- mutate(X_merged, subjectId=subject_merged$V1)
 
-# Write to file
+# Write new data set for step 4 to file
 write.table(X_merged, file="output_step4.txt")
 
 # From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
@@ -35,4 +35,5 @@ newSet <- X_merged %>%
   group_by(activity, subjectId) %>%
   summarize_each(funs(mean))
 
+# Write the new data set for step 5 to file
 write.table(newSet, file="output_step5.txt", row.name=FALSE)
