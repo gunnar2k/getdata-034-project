@@ -7,7 +7,7 @@ X_test <- fread('dataset/test/X_test.txt')
 X_merged <- rbind(X_train, X_test)
 
 # Appropriately labels the data set with descriptive variable names.
-feature_names <- as.character(read.table('dataset/features.txt')$V2)
+feature_names <- as.character(read.table('features.txt')$V2)
 X_merged <- setNames(X_merged, feature_names)
 
 # Extracts only the measurements on the mean and standard deviation for each measurement.
@@ -17,7 +17,7 @@ X_merged <- select(X_merged, matches("mean|std"))
 y_train <- fread('dataset/train/y_train.txt')
 y_test <- fread('dataset/test/y_test.txt')
 y_merged <- rbind(y_train, y_test)
-activity_labels <- read.table('dataset/activity_labels.txt', col.names=c("id", "activity"))
+activity_labels <- read.table('activity_labels.txt', col.names=c("id", "activity"))
 X_merged <- mutate(X_merged, activityId = y_merged)
 X_merged <- merge(X_merged, activity_labels, by.x="activityId", by.y="id")
 
@@ -28,7 +28,7 @@ subject_merged <- rbind(subject_train, subject_test)
 X_merged <- mutate(X_merged, subjectId=subject_merged$V1)
 
 # Write new data set for step 4 to file
-write.table(X_merged, file="output_step4.txt")
+write.table(X_merged, file="output_step4.txt", row.name=FALSE)
 
 # From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 newSet <- X_merged %>%
